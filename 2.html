@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let obj = {
+      //     name: "havi",
+      //     // 객체안에 함수 정의
+      //     disp: function () {
+      //       //  this. 를 이용하여, 객체 안에 자신을 가리키는 name을 찾는다.
+      //       //  this.name => obj.name
+      //       //  this. 를 쓰지 않으면, undefind 값이 들어감 (아무것도 안뜸)
+      //       alert(this.name);
+      //     },
+      //   };
+      //   //   obj 객체 안에 있는 disp 함수 호출
+      //   obj.disp();
+
+      //   let obj2 = {
+      //     name: "Havi",
+      //     disp: function () {
+      //       console.log(this.name);
+      //     },
+      //     name: "Rio",
+      //     disp: function () {
+      //       console.log(this.name);
+      //     },
+      //   };
+      //   for (elm in obj2) {
+      //     obj2[elm].disp();
+      //   }
+
+
+
+      //   함수 안에서 this를 사용했기 때문에 -> 생성자
+      let person = function (name) {
+        this.name = name;
+        this.disp = function () {
+          console.log(this.name);
+        };
+      };
+    //   메서드는 다시 만들지 않고 속성만 설정해서 인스턴스를 생성
+    //  생성자를 이용해서 인스턴스를 만들 때는 new와 함께 호출해야 함
+    //  heap이라는 공간에 인스턴스를 생성
+      ar = [new person("havi"), new person("rio")];
+      for (elm in ar) {
+        ar[elm].disp();
+      }
+    </script>
+  </body>
+</html>

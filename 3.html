@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let Member = class {
+      //     // 생성자
+      //     constructor(name) {
+      //       this.name = name;
+      //     }
+      //     // 클래스 안에 메서드를 만들 때는 let 이나 function 생략이 가능함
+      //     disp() {
+      //       console.log(this.name);
+      //     }
+      //   };
+
+      //   ar = [new Member("havi"), new Member("Rio")];
+
+      //   for (elm in ar) ar[elm].disp();
+
+      let Person = class {
+        constructor(name, score) {
+          this.name = name;
+          this.score = score;
+        }
+
+        // 출력하는 메서드
+        disp() {
+          console.log(this.name + ":" + this.score);
+        }
+
+        // getter : 속성을 리턴하는 메서드
+        getName() {
+          return this.name;
+        }
+
+        // setter : 속성의 값을 수정하는 메서드
+        setName(name) {
+          this.name = name;
+        }
+
+        getScore() {
+          return this.score;
+        }
+
+        setScore(score) {
+          //  유효성 검사, score 값이 해당 조건이 만족하는지.
+          if (score < 0 || score > 100) {
+            alert("적절하지 않은 점수");
+            return;
+          }
+          this.score = score;
+        }
+      };
+
+      let obj = new Person("Havi", 90);
+    //   점수를 150으로 수정하면, 유효성 검사에 의해, alert message가 나온다.
+      obj.setScore(150);
+      obj.disp();
+    </script>
+  </body>
+</html>

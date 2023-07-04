@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ar = [23, 39, 16, 23, 44];
+
+      let list = [
+        { name: "kim", gender: "남" },
+        { name: "lee", gender: "여" },
+        { name: "park", gender: "남" },
+      ];
+
+      console.log(ar.length);
+
+      for (elm in ar) {
+        console.log(ar[elm]);
+      }
+
+      //   데이터 순회하면서 작업하기 - forEach
+      //   배열을 순회하면 데이터를 하나씩 접근하는 함수
+      //   첫 번째는 데이터 두 번째는 인덱스, 세 번째는 배열전체
+      ar.forEach((elm, idx, array) => {
+        console.log(elm);
+      });
+
+      //      map은 사용하는 형태는 forEach 와 동일함
+      //      함수가 데이터를 리턴해야함
+      //      리턴한 데이터를 모아서 다시 배열로 만들어서 리턴
+      let r = ar.map((elm, idx, arr) => {
+        return elm + 1;
+      });
+      console.log(r);
+
+      //    filter
+      r = ar.filter((elm, idx, arr) => {
+        // 홀수만 고르기
+        return elm % 2 == 1;
+      });
+      console.log(r);
+
+      r = list.filter((elm, idx, arr) => {
+        return elm.gender === "남";
+      });
+      console.log(r);
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ar = [
+        { name: "havi", job: "student" },
+        { name: "rio", job: "marketer" },
+      ];
+      //   for (let idx = 0; idx < ar.length; idx++)
+    //   > in으로 iterator 하기
+      for (idx in ar) {
+        console.log(ar[idx].name);
+        document.write(ar[idx].name + " " + ar[idx].job); // [object object] [object object]
+        document.write("<br />");
+      }
+    </script>
+  </body>
+</html>
